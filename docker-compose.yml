@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  apache2:
+    container_name: Apache2
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - mysql
+    ports:
+      - "8080:80"
+    volumes:
+      - ./apache2/htdocs:/usr/local/apache2/htdocs
+
+  mysql:
+    container_name: MySQL
+    image: mysql:8.0.26
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: test_db
+    volumes:
+        - "./mysql:/docker-entrypoint-initdb.d"
