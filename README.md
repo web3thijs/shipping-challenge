@@ -1,4 +1,4 @@
-# ShippingChallenge
+# Shipping Challenge
 Docker - Shipping challenge
 
 Stack: Apache, MySQL, Perl
