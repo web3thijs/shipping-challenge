@@ -22,4 +22,4 @@ services:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: test_db
     volumes:
-        - "./mysql:/docker-entrypoint-initdb.d"
+        - ./mysql:/docker-entrypoint-initdb.d
